@@ -21,6 +21,7 @@
     background-color: rgb(0, 255, 174);
     display: flex;
     align-items: center;
+    z-index: 100;
  }
  h1 {
     margin: 0; padding: 0;
