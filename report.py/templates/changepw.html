@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/reset.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+
+
+    <title>新規登録</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="">就職活動管理システム</a>
+        </h1>
+        <nav class="pc-nav">
+        
+        </nav>
+    </header>
+    <h2 class="subtitle">パスワード変更認証</h1>
+
+    <form method="post" action="{{url_for('sendmail')}}"class="form">
+        mail:<br><input type="text" name="mail"><br>
+        <button type="submit" value="Login"class="submexample"">送信</button>  
+    </form>
+    <a href="/"class="example">戻る</a>
+</body>
+</html>

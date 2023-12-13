@@ -1,0 +1,23 @@
+{% extends "user_layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/list.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/detail_report.css')}}">
+{% endblock %}
+
+
+{% block content %}
+{% if error != null %}
+<h1>不正なアクセスです</h1>
+{% else %}
+<h1>詳細</h1>
+{{a}}
+<div class="pdf">
+  
+  <embed src="{{url_for('static', filename=fail)}}" type="application/pdf" width="600px" height="400px">
+  </div>
+  <div class="back">  
+    <a href="{{url_for('back_search_report')}}"class="a" >戻る</a>
+  </div>
+{% endif %}
+{% endblock %}

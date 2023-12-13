@@ -1,0 +1,23 @@
+{% extends "user_layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/list.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/detail_report.css')}}">
+{% endblock %}
+
+
+{% block content %}
+
+  
+
+
+
+<h1>詳細</h1>
+
+<div class="pdf">    
+    <embed src="{{url_for('static', filename=fail)}}" type="application/pdf" width="600px" height="500px">
+    </div>
+    <div class="back">
+        <a href="{{url_for('mypage')}}"class=a>戻る</a>
+    </div>  
+{% endblock %}

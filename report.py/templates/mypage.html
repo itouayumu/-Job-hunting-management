@@ -1,0 +1,52 @@
+{% extends "user_layout.html" %}
+
+{% block css %}
+<!-- <link rel="stylesheet" href="{{url_for('static', filename='css/list.css')}}"> -->
+<link rel="stylesheet" href="{{url_for('static', filename='css/mypage.css')}}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="mypage_back">
+        <div class="margin">
+        
+        <div class="mypage">
+            
+            <div class="profile">
+                <h1>利用者情報</h1>
+                名前：{{name}}<br>
+                メール：{{mail}}<br>
+                学科：{{course}}<br>
+            </div>
+            <div>
+                
+                <h1 class="post">投稿一覧</h1><br>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>会社名</th>
+                            <th>投稿日</th>
+                            
+                            <th></th>
+                            
+                        </tr>
+                        
+                        <tbody>
+                            {% for report in my_reports_list %}
+                            <tr>
+                                
+                                <td>{{ report[3] }}</td>
+                                <td>{{ report[9] }}</td>
+                                
+                                <td><a class="detail"href='/mydetail?f_name={{report[2]}}''>詳細へ</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+            
+        </table>
+    </div>
+</div>
+</div>
+</div>
+{% endblock %}

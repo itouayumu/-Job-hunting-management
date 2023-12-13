@@ -1,0 +1,30 @@
+body{
+    text-align: center;
+}
+.text{
+    margin-top: 270px;
+}
+a.a {
+
+
+      margin-top: 30px;
+
+      padding: 0.5rem 1.5rem;
+      border: 3px solid #000;
+      border-radius: 0;
+      border-radius: 100vh;
+      background: #fff;
+    }
+    
+    a.a :before {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: calc(100% - 4px);
+      height: calc(100% - 4px);
+      content: '';
+      -webkit-transition: all .3s;
+      transition: all .3s;
+      border: 3px dotted #000;
+      border-radius: 100vh;
+    }

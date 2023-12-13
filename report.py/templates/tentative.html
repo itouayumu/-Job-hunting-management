@@ -1,0 +1,139 @@
+{% extends "adomin_layput.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/list.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/a.css')}}">
+{% endblock %}
+
+
+{% block content %}
+<form action="{{url_for('search_t')}}" method="POST"enctype="multipart/form-data" class="search-form-002">
+    <label>
+      <input type="text" placeholder="企業名を入力"name="name"value="{{ name }}">
+  </label><br>
+  <div class="search-2">
+    
+    <div class="region">
+      <p>地域</p>
+      <select name="region">
+        <option value=""{% if region == ""%} selected {% endif%}>県を選択してください</option>
+        <option value="北海道"{% if region == "北海道"%} selected {% endif%}>北海道</option>
+        <option value="青森県"{% if region == "青森県"%} selected {% endif%}>青森県</option>
+        <option value="岩手県"{% if region == "岩手県"%} selected {% endif%}>岩手県</option>
+        <option value="宮城県"{% if region == "宮城県"%} selected {% endif%}>宮城県</option>
+        <option value="秋田県"{% if region == "秋田県"%} selected {% endif%}>秋田県</option>
+        <option value="山形県"{% if region == "山形県"%} selected {% endif%}>山形県</option>
+        <option value="福島県"{% if region == "福島県"%} selected {% endif%}>福島県</option>
+        <option value="茨城県"{% if region == "茨城県"%} selected {% endif%}>茨城県</option>
+        <option value="栃木県"{% if region == "栃木県"%} selected {% endif%}>栃木県</option>
+        <option value="群馬県"{% if region == "群馬県"%} selected {% endif%}>群馬県</option>
+        <option value="埼玉県"{% if region == "埼玉県"%} selected {% endif%}>埼玉県</option>
+        <option value="千葉県"{% if region == "千葉県"%} selected {% endif%}>千葉県</option>
+        <option value="東京都"{% if region == "東京都"%} selected {% endif%}>東京都</option>
+        <option value="神奈川県"{% if region == "神奈川県"%} selected {% endif%} >神奈川県</option>
+        <option value="新潟県"{% if region == "新潟県"%} selected {% endif%}>新潟県</option>
+        <option value="富山県"{% if region == "富山県"%} selected {% endif%}>富山県</option>
+        <option value="石川県"{% if region == "石川県"%} selected {% endif%}>石川県</option>
+        <option value="福井県"{% if region == "福井県"%} selected {% endif%}>福井県</option>
+        <option value="山梨県"{% if region == "山梨県"%} selected {% endif%}>山梨県</option>
+        <option value="長野県"{% if region == "長野県"%} selected {% endif%}>長野県</option>
+        <option value="岐阜県"{% if region == "岐阜県"%} selected {% endif%}>岐阜県</option>
+        <option value="静岡県"{% if region == "静岡県"%} selected {% endif%}>静岡県</option>
+        <option value="愛知県"{% if region == "愛知県"%} selected {% endif%}>愛知県</option>
+        <option value="三重県"{% if region == "三重県"%} selected {% endif%}>三重県</option>
+        <option value="滋賀県"{% if region == "滋賀県"%} selected {% endif%}>滋賀県</option>
+      <option value="京都府"{% if region == "京都府"%} selected {% endif%}>京都府</option>
+      <option value="大阪府"{% if region == "大阪府"%} selected {% endif%}>大阪府</option>
+      <option value="兵庫県"{% if region == "兵庫県"%} selected {% endif%}>兵庫県</option>
+      <option value="奈良県"{% if region == "奈良県"%} selected {% endif%}>奈良県</option>
+      <option value="和歌山県"{% if region == "和歌山県"%} selected {% endif%}>和歌山県</option>
+      <option value="鳥取県"{% if region == "鳥取県"%} selected {% endif%}>鳥取県</option>
+      <option value="島根県"{% if region == "島根県"%} selected {% endif%}>島根県</option>
+      <option value="岡山県"{% if region == "岡山県"%} selected {% endif%}>岡山県</option>
+      <option value="広島県"{% if region == "広島県"%} selected {% endif%}>広島県</option>
+      <option value="山口県"{% if region == "山口県"%} selected {% endif%}>山口県</option>
+      <option value="徳島県"{% if region == "徳島県"%} selected {% endif%}>徳島県</option>
+      <option value="香川県"{% if region == "香川県"%} selected {% endif%}>香川県</option>
+      <option value="愛媛県"{% if region == "愛媛県"%} selected {% endif%}>愛媛県</option>
+      <option value="高知県"{% if region == "高知県"%} selected {% endif%}>高知県</option>
+      <option value="福岡県"{% if region == "福岡県"%} selected {% endif%}>福岡県</option>
+      <option value="佐賀県"{% if region == "佐賀県"%} selected {% endif%}>佐賀県</option>
+      <option value="長崎県"{% if region == "長崎県"%} selected {% endif%}>長崎県</option>
+      <option value="熊本県"{% if region == "熊本県"%} selected {% endif%}>熊本県</option>
+      <option value="大分県"{% if region == "大分県"%} selected {% endif%}>大分県</option>
+      <option value="宮崎県"{% if region == "宮崎県"%} selected {% endif%}>宮崎県</option>
+      <option value="鹿児島県"{% if region == "鹿児島県"%} selected {% endif%}>鹿児島県</option>
+      <option value="沖縄県"{% if region == "沖縄県"%} selected {% endif%}>沖縄県</option>
+      <option value="海外"{% if region == "海外"%} selected {% endif%}>海外</option>
+      
+    </select>
+  </div>
+  <div class="address">
+    
+    <div class="category">
+      <p>職種</p>
+      <select name="category">
+        <option value=""{% if category == ""%} selected {% endif%}>職種を選択してください</option>
+        <option value="IT"{% if category == "IT"%} selected {% endif%}>IT</option>
+        <option value="ビジネス"{% if category == "ビジネス"%} selected {% endif%}>ビジネス</option>
+        <option value="デザイン"{% if category == "デザイン"%} selected {% endif%}>デザイン</option>
+        <option value="その他"{% if category == "その他"%} selected {% endif%}>その他</option>
+      </select>
+    </div>
+  </div>
+    <button type="submit" aria-label="検索"></button>
+    </form>
+    <div class="black-background" id="js-black-bg"></div>
+</div>
+{% if reports_list %}
+<a href="{{url_for('allupdate')}}" class="a">一括登録</a>
+{% endif %}
+<h1>一覧</h1>
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th>投稿日</th>
+        <th>会社名</th>
+        <th>地域</th>
+        <th>業種</th>
+        <th>報告者氏名</th>
+        <th></th>
+
+    </tr>
+        
+        <tbody>
+            {% for report in reports_list %}
+                <tr>
+                    <td>{{ report[9] }}</td>
+                    <td>{{ report[3] }}</td>
+                    <td>{{ report[4] }}</td>
+                    <td>{{ report[6] }}</td>
+                    <td>{{ report[1] }}</td>
+                    <td><a class="detail"href='/t_detail?f_name={{report[2]}}''>詳細へ</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+<script>
+  document.getElementById('modalView').addEventListener('click', () => {
+  const modalbtn = document.getElementById('firstTimeModal');
+       modalbtn.classList.add('is-show');
+  });
+  
+  document.getElementById('js-black-bg').addEventListener('click', () => {
+  const modalClose = document.getElementById('firstTimeModal');
+       modalClose.classList.remove('is-show');
+  });
+  document.getElementById('modalCloseCloss').addEventListener('click', () => {
+  const modalClose = document.getElementById('firstTimeModal');
+       modalClose.classList.remove('is-show');
+  });
+
+</script>
+<script src="static/js/list.js"></script>
+</table>
+  
+
+
+
+
+{% endblock %}

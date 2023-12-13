@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/reset.css')}}">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/addacount.css')}}">
+    <title>新規登録</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="">就職活動管理システム</a>
+        </h1>
+        <nav class="pc-nav">
+        
+        </nav>
+    </header>
+    <h2 class="subtitle">新規登録</h1>
+    <form method="post" action='{{url_for("addacount")}}'class="form">
+        <div class="text">name:</div><input type="text" name="name"required="required"class="id"><br>
+        <div class="text">mail:</div><input type="text" name="mail"required="required"class="id"><br>
+        <div class="text">pass:</div><input type="password" name="pw"required="required"class="id"><br>
+        <div class="id">
+        <label>
+            course:<br>
+                <input type="radio" name="course" value="情報ビジネス" checked="checked" class="Chkbox">情報ビジネス<br>
+                </label>
+                <label>
+                <input type="radio" name="course" value="総合システム工学"class="Chkbox">総合システム工学<br>
+                </label>
+                <label>
+                <input type="radio" name="course" value="高度情報"class="Chkbox">高度情報<br>
+                </label>
+            </div>
+        <button type="submit" class="subm">登録</button>  
+        </form>
+        <a href="/"class="example">戻る</a>
+</body>
+</html>

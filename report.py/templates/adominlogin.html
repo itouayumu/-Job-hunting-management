@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="{{url_for('static', filename='favicon/ico.ico')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/reset.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/adomin_login.css')}}">
+    <title>管理者Login</title>
+</head>
+<header>
+    <h1>
+        <a href="">就職活動管理システム(管理者)</a>
+    </h1>
+    <nav class="pc-nav">
+    
+    </nav>
+</header>
+<h2 class="subtitle">管理者ログインページ</h2>
+<!-- <p class="error">{{error}} </p> -->
+
+<form method="post" action="{{url_for('a_login')}}"class="form">
+    id:<br><input type="text" name="id" value="{{mail}}"><br>
+    pass:<br><input type="password" name="pw"><br>
+    <button type="submit" value="Login"class="submexample"">Login</button>  
+</form>
+    <a href="/"class="example">戻る</a>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'スマートフォントUI';
+    src: url("../fonts/03スマートフォントUI.otf") format("opentype");
+}
+body{
+    
+    font-family: 'スマートフォントUI';
+    background-color: #e6e6e6;
+}
+
+header {
+    padding: 30px 4% 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(0, 255, 174);
+    display: flex;
+    align-items: center;
+ }
+ h1 {
+    margin: 0; padding: 0;
+    font-size: 20px;
+ }
+ a {	
+    text-decoration: none;
+    color: white;
+ }
+.error{
+    color:red;
+    font-size: 20px;
+    margin-left: 32%;
+}
+.subtitle{
+    margin-left: 39.5%;
+    margin-top: 10%;
+}
+.form{
+    margin-left: 41%;
+    margin-top: 5%;
+}
+.submexample{
+    display: block;
+    width: 180px;
+    padding: 10px 0;
+    margin-left: 2.5%;
+    margin-top: 1%;
+    background: rgb(0, 255, 174);
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    border : solid 1.5px #333 ;
+}
+.submexample:hover{
+    background: rgb(0, 147, 101);
+    border : solid 1.5px #333 ;
+}
+.example{
+    display: block;
+    width: 180px;
+    padding: 10px 0;
+    margin-left: 42.5%;
+    margin-top: 1%;
+    background: rgb(0, 255, 174);
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    border : solid 1.5px #333 ;
+}
+.example:hover{
+    background: rgb(0, 147, 101);
+    border : solid 1.5px #333 ;
+}

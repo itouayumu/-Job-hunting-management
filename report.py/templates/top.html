@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="icon" href="{{url_for('static', filename='favicon/ico.ico')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/reset.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/user_layout.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/top.css')}}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
+    <script>
+      var pass = "{{ p_result|tojson }}";
+      var sum = "{{ count|tojson }}";
+      var pa=(pass+sum)/pass
+      sum=sum-pass
+      window.onload = function () {
+        let context = document.querySelector("#result").getContext('2d')
+        
+        new Chart(context, {
+          type: 'pie',
+          data: {
+
+            labels: ["合格","不合格"],
+            datasets: [{
+              backgroundColor: ["rgb(0, 255, 174)", "rgba(255, 174, 0, 0.667)"],
+              data: [pass,sum],
+            }]
+          },
+          options: {
+            responsive: false,
+            plugins: {
+              title: {
+                display: true,
+                text: '今年度の合格率'
+              },
+            },
+      }});
+      }
+    </script>
+  <title>就職活動管理システム</title>
+</head>
+<body>
+  
+  <header>
+    <h1>
+        <a href="top">就職活動管理システム</a>
+    </h1>
+    <nav class="pc-nav">
+        <ul>
+            <li><a href="jobinf_list">求人情報一覧</a></li>
+            <li><a href="/report_list">報告書一覧</a></li>
+            <li><a href="mypage">マイページ</a></li>
+            <li><a href="/send_report">報告書提出</a></li>
+            <li><a href="/logout">ログアウト</a></li>
+        </ul>
+    </nav>
+</header>
+ 
+<div class="top">
+  
+    
+        <h1>報告書</h1>
+        <div class="flax">
+          
+          <table class="table table-striped">
+            <thead>
+                <tr>
+
+                    <th>会社名</th>
+                    <th>地域</th>
+                    <th>報告者氏名</th>
+                    <th></th>
+                    
+                </tr>
+                
+                <tbody>
+                  {% for report in reports_list %}
+                    <tr>
+
+                        <td>{{ report[3] }}</td>
+                        <td>{{ report[4] }}</td>
+                        <td>{{ report[1] }}</td>
+                        <td><a class="detail"href='/topdetail?f_name={{report[2]}}''>詳細へ</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                
+            </table>
+            <canvas id="result" class="table table-striped" width="200" height="200"></canvas>
+          </div>
+          <div class="job_inf">
+
+            <h1>求人情報</h1>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>投稿日</th>
+                  <th>会社名</th>
+                  <th>地域</th>
+                  
+                  <th></th>
+                  
+                </tr>
+                
+                <tbody>
+                  {% for jobinf in jobinf_list %}
+                  <tr>
+                    <td>{{ jobinf[6] }}</td>
+                    <td>{{ jobinf[2] }}</td>
+                    <td>{{ jobinf[3] }}</td>
+                    
+                    <td><a class="detail"href='/topdetail?f_name={{jobinf[1]}}''>詳細へ</a></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+                
+              </table>
+            </div>
+              
+              
+              
+            </body>
+</html>
+
+
+
+
+

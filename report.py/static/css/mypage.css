@@ -1,0 +1,43 @@
+.mypage{
+    display:flex
+}
+.table table-striped a{
+
+    color: black;
+    }
+  
+    .post{
+        margin-left: 100px;
+    }
+    
+    table {
+        /* border-collapse: collapse;
+        border-spacing: 30px 10px; */
+        width:500px;
+        margin-left: 100px;
+        text-align: center;
+        border: 2px solid rgb(127, 127, 127);
+    }
+    table a{
+     color: black;
+    }
+    table a :hover{
+        color: rgb(192, 192, 192);
+       }
+    #result{
+        border: 2px solid rgb(127, 127, 127);
+        /* margin-left: 736.5px; */
+    }
+    tr:nth-child(even) {
+        background: #a4a4a45e;
+    }
+    
+    tr:nth-child(odd) {
+        background: rgba(212, 213, 213, 0.444);;
+    }
+    .mypage_back{
+        background-color: aliceblue;
+    }
+.margin{
+    margin-left: 150px;
+}

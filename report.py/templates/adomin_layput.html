@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="icon" href="{{url_for('static', filename='favicon/ico.ico')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/reset.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/admin_layout.css')}}">
+  {% block css %}
+  <!-- CSS埋め込み -->
+  {% endblock %}
+  <title>就職活動管理システム(管理者)</title>
+</head>
+<body>
+  
+  <header>
+    <h1>
+        <a href="/atop">就職活動管理システム(管理者)</a>
+    </h1>
+    <nav class="pc-nav">
+        <ul>
+            <li><a href="#">求人情報一覧</a></li>
+            <li><a href="send_jobinf">求人情報投稿</a></li>
+            <li><a href="/tentative">仮登録中報告書一覧</a></li>
+            <li><a href="/#">報告書一覧</a></li>
+            <li><a href="#">ユーザー一覧</a></li>
+            <li><a href="/logout">ログアウト</a></li>
+        </ul>
+    </nav>
+</header>
+ 
+  <div class="top">
+
+    {% block content %}
+    <!-- ここにメインコンテンツを埋め込む -->
+    {% endblock %}
+  </div>
+
+
+</body>
+</html>
